@@ -1,0 +1,18 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    volumes:
+      - ./nginx/www:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 8000:80
+    links:
+      - server
+
+  server:
+    build: python_test/
+    container_name: api_PythonTest
+    command: python3 ./main.py
