@@ -5,6 +5,7 @@
     if (response.status === 200) {
       return response.json();
     }
+    console.log(`Invalid response`)
     return null;
   }).then((json) => {
     const data = json?.data

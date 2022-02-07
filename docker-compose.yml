@@ -10,9 +10,8 @@ services:
     ports:
       - 8000:80
     links:
-      - server
+      - python_test
 
-  server:
+  python_test:
     build: python_test/
     container_name: api_PythonTest
-    command: python3 ./main.py
