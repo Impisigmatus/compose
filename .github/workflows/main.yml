@@ -27,4 +27,6 @@ jobs:
           SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
 
       - name: Action
-        run: ssh impisigmatus 'echo $PS1'
+        run: |
+          echo "test" > test.data
+          scp test.data impisigmatus:~/
