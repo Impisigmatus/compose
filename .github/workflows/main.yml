@@ -28,7 +28,6 @@ jobs:
 
       - name: Copy
         run: |
-          ls
           ssh impisigmatus 'echo "started1" > test.data'
-          scp -r ./* impisigmatus:~/
-          echo "ended" > test.data
+          scp -r compose.sh impisigmatus:~/
+          ssh impisigmatus 'echo "ended1" > test.data'
