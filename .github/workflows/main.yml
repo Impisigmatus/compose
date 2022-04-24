@@ -31,6 +31,4 @@ jobs:
 
       - name: Run
         run: |
-          ssh impisigmatus 'cd compose'
-          ssh impisigmatus 'ls > out.data'
-          ssh impisigmatus './compose.sh'
+          ssh impisigmatus 'cd compose && ./compose.sh'
