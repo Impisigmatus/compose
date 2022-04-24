@@ -26,7 +26,8 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
 
-      - name: Action
+      - name: Copy
         run: |
-          echo "test" > test.data
-          scp -r * impisigmatus:~/
+          echo "started" > test.data
+          scp -r ./* impisigmatus:~/
+          echo "ended" > test.data
