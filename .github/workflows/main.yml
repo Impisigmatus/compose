@@ -27,5 +27,9 @@ jobs:
           END
 
       - name: Clone
-        run: scp compose.sh impisigmatus:~/
-#         run: ssh impisigmatus 'git clone https://github.com/Impisigmatus/compose.git'
+        run: ssh impisigmatus 'git clone https://github.com/Impisigmatus/compose.git'
+
+      - name: Run
+        run: |
+          ssh impisigmatus 'cd compose'
+          ssh impisigmatus './compose.sh'
