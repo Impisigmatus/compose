@@ -27,4 +27,4 @@ jobs:
           END
 
       - name: Clone
-        run: git clone https://github.com/Impisigmatus/compose.git
+        run: ssh impisigmatus 'git clone https://github.com/Impisigmatus/compose.git'
