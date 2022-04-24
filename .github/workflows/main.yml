@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
+        env:
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_KEY" > ~/.ssh/id_ed25519_impisigmatus
@@ -21,13 +25,6 @@ jobs:
             IdentityFile ~/.ssh/id_ed25519_impisigmatus
             StrictHostKeyChecking no
           END
-        env:
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
 
-      - name: Copy
-        run: |
-          ssh impisigmatus 'echo "started1" > test.data'
-          scp -r compose.sh impisigmatus:~/
-          ssh impisigmatus 'echo "ended1" > test.data'
+      - name: Clone
+        run: git clone https://github.com/Impisigmatus/compose.git
