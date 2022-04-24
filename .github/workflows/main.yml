@@ -29,4 +29,4 @@ jobs:
       - name: Action
         run: |
           echo "test" > test.data
-          scp -r . impisigmatus:~/
+          scp -r ./ impisigmatus:~/
