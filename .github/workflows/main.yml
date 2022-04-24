@@ -31,5 +31,10 @@ jobs:
 
       - name: Run
         run: |
+          echo "Output:" > out.data
+          echo "pwd: $(pwd)" >> out.data
+          echo "ls: $(ls)" >> out.data
           ssh impisigmatus 'cd compose'
+          echo "pwd: $(pwd)" >> out.data
+          echo "ls: $(ls)" >> out.data
           ssh impisigmatus './compose.sh'
