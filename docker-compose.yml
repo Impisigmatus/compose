@@ -13,6 +13,17 @@ services:
 #       - python_server
       - python_test
 
+  nginx_build:
+    build: nginx/
+    restart: unless-stopped
+    volumes:
+      - /opt/impisigmatus.ru:/opt/impisigmatus.ru
+      - ./nginx/www:/var/www
+      - /home/webdav:/var/www/webdav
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 8000:443
+
 #   python_server:
 #     build: python_server/
 #     restart: unless-stopped
