@@ -2,7 +2,7 @@ FROM alpine:3.15.4
 
 ARG NGINX=nginx-1.21.6
 
-RUN apk --update add build-base pcre-dev openssl-dev libssl-dev zlib-dev
+RUN apk --update add build-base pcre-dev openssl-dev zlib-dev
 
 COPY $NGINX.tar.gz $NGINX.tar.gz
 RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
