@@ -31,4 +31,4 @@ jobs:
 
       - name: Run
         run: |
-          ssh impisigmatus 'cd compose && docker-compose build && docker-compose up -d'
+          ssh impisigmatus 'cd compose && docker-compose build && docker-compose up -d --force-recreate'
