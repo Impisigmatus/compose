@@ -12,8 +12,8 @@ services:
     ports:
       - 8000:443
     links:
-      - api_PythonTest
+      - api_PythonTest1
 
   python_test:
     build: python_test/
-    container_name: api_PythonTest
+    container_name: api_PythonTest1
