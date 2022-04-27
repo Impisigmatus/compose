@@ -2,7 +2,6 @@ version: "3"
 services:
   nginx:
     build: nginx/
-    container_name: nginx
     restart: unless-stopped
     volumes:
       - /opt/impisigmatus.ru:/opt/impisigmatus.ru
