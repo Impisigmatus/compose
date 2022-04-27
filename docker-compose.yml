@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - /opt/impisigmatus.ru:/opt/impisigmatus.ru
-      - ./nginx/www:/var/www
+      - ./nginx/www:/var/www/impisigmatus.ru
       - /home/webdav:/var/www/webdav/srv/server
     ports:
       - 8000:443
