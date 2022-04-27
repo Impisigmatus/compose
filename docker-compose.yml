@@ -6,7 +6,7 @@ services:
     volumes:
       - /opt/impisigmatus.ru:/opt/impisigmatus.ru
       - ./nginx/www:/var/www
-      - /home/webdav:/var/www/webdav
+      - /home/webdav:/var/www/webdav/srv/server
     ports:
       - 8000:443
     links:
