@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 ARG NGINX=nginx-1.21.6
+ENV CC=gcc
 
 RUN apk update && apk add gcc
 
