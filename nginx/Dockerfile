@@ -13,4 +13,6 @@ RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
     --with-http_dav_module && \
   make && make install
 
+EXPOSE 443
+
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
