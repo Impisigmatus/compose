@@ -16,6 +16,5 @@ RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
 
 RUN mkdir -p /var/log/nginx
 COPY conf.d/nginx.conf /etc/nginx/nginx.conf
-COPY conf.d/htpasswd /etc/nginx/htpasswd
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
