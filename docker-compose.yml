@@ -5,10 +5,11 @@ services:
     container_name: nginx
     restart: unless-stopped
     volumes:
+      - /opt/impisigmatus.ru:/opt/impisigmatus.ru
       - ./nginx/www:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     ports:
-      - 8000:80
+      - 8000:443
     links:
       - python_test
 
