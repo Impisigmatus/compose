@@ -15,4 +15,5 @@ RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
 
 EXPOSE 443
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+STOPSIGNAL SIGTERM
+CMD ["nginx", "-g", "daemon off;"]
