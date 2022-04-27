@@ -7,7 +7,7 @@ RUN apk --update add build-base pcre-dev openssl-dev zlib-dev
 COPY $NGINX.tar.gz $NGINX.tar.gz
 RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
   CC=/usr/bin/gcc ./configure \
-    --sbin-path=/usr/local/sbin/nginx && \
+    --sbin-path=/usr/local/sbin/nginx \
     --with-http_ssl_module \
     --with-http_stub_status_module \
     --with-http_dav_module && \
