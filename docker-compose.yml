@@ -10,15 +10,15 @@ services:
     ports:
       - 8000:443
     links:
-      - python_server
+#       - python_server
       - python_test
 
-  python_server:
-    build: python_server/
-    restart: unless-stopped
-    volumes:
-      - /home/webdav:/var/www/webdav
-    container_name: api_PythonServer
+#   python_server:
+#     build: python_server/
+#     restart: unless-stopped
+#     volumes:
+#       - /home/webdav:/var/www/webdav
+#     container_name: api_PythonServer
 
   python_test:
     build: python_test/
