@@ -30,7 +30,7 @@ jobs:
         run: ssh impisigmatus 'rm -rf compose/ && git clone https://github.com/Impisigmatus/compose.git'
 
       - name: Htpasswd
-        run: ssh impisigmatus "echo -e '${{ secrets.HTPASSWD_DATA }}' > compose/nginx/conf.d/htpasswd"
+        run: ssh impisigmatus "echo -e 'asd ${{ secrets.HTPASSWD_DATA }} dsa' > compose/nginx/conf.d/htpasswd"
 
       - name: Run
         run: |
