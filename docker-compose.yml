@@ -20,7 +20,7 @@ services:
       - /opt/impisigmatus.ru:/opt/impisigmatus.ru
       - ./nginx/www:/var/www
       - /home/webdav:/var/www/webdav
-      - ./nginx/conf.d/:/usr/local/nginx/conf
+      - ./nginx/conf.d/:/etc/nginx
     ports:
       - 8000:443
     links:
