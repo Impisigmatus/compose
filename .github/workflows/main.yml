@@ -9,7 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Configure SSH        env:
+      - name: Configure SSH
+        env:
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
