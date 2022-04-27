@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM alpine:3.15.4
 
 ARG NGINX=nginx-1.21.6
 
-RUN apk --update add openssl-dev pcre-dev zlib-dev wget build-base
+RUN apk --update add pcre-dev build-base
 
 COPY $NGINX.tar.gz $NGINX.tar.gz
 RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
@@ -18,3 +18,5 @@ RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
     --with-http_ssl_module \
     --with-http_dav_module && \
   make && make install
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"] 
