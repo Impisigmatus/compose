@@ -31,7 +31,7 @@ jobs:
 
       - name: Htpasswd
         env:
-          HTPASSWD_DATA: ${{ secrets.HTPASSWD_DATA }}
+          HTPASSWD_DATA: '${{ secrets.HTPASSWD_DATA }}'
         run: ssh impisigmatus "echo -e \'$HTPASSWD_DATA\' > compose/nginx/conf.d/htpasswd"
 
       - name: Run
