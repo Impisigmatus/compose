@@ -13,4 +13,4 @@ RUN tar -vxf $NGINX.tar.gz && cd $NGINX && \
     --with-http_dav_module && \
   make && make install
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx"]
