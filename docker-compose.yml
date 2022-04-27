@@ -1,8 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: nginx:alpine
-    container_name: nginx
+    build: nginx/
     restart: unless-stopped
     volumes:
       - /opt/impisigmatus.ru:/opt/impisigmatus.ru
