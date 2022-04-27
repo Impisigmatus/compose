@@ -10,18 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
-        env:
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOSTNAME: ${{ secrets.SSH_HOSTNAME }}
         run: |
           mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/id_ed25519_impisigmatus
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519_impisigmatus
           chmod 600 ~/.ssh/id_ed25519_impisigmatus
           cat >> ~/.ssh/config << END
           Host impisigmatus
-            HostName $SSH_HOSTNAME
-            User $SSH_USERNAME
+            HostName ${{ secrets.SSH_HOSTNAME }}
+            User $${{ secrets.SSH_USERNAME }}
             IdentityFile ~/.ssh/id_ed25519_impisigmatus
             StrictHostKeyChecking no
           END
