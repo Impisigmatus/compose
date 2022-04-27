@@ -1,9 +1,5 @@
 version: "3"
 services:
-  python_test:
-    build: python_test/
-    container_name: api_PythonTest
-
   nginx:
     build: nginx/
     container_name: nginx
@@ -17,3 +13,7 @@ services:
       - 8000:443
     links:
       - api_PythonTest
+
+  python_test:
+    build: python_test/
+    container_name: api_PythonTest
